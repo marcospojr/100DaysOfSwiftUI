@@ -21,7 +21,7 @@ let colors2 = Set(["red", "blue", "green", "red", "blue"])
 
 
 
-// Tuplas
+// Tuples
 
 var name = (first: "Taylor", last: "Swift")
 
@@ -38,7 +38,7 @@ person.age
 
 
 
-// Arrays x Sets x Tuplas
+// Arrays x Sets x Tuples
 
 let address = (house: 555, street: "Taylor Swift Avenue", city: "Nashville")
 
@@ -94,7 +94,7 @@ var results3 = Array<Int>()
 
 
 
-// Enumerações
+// Enums
 
 let result = "failure"
 let result2 = "failed"
@@ -139,14 +139,6 @@ enum Planet: Int {
 
 let earth = Planet(rawValue: 3)
 
-enum Mood: Int {
-    case happy
-    case sad
-    case grumpy
-    case sleepy
-    case hungry
-}
 
-Mood.happy
 
 

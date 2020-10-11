@@ -1,23 +1,20 @@
 import UIKit
 
-//var name = "Tim McGraw"
-//name = "Romeo"
-//
-//let name2 = "Tim McGraw"
+var name = "Tim McGraw"
+name = "Romeo"
+
+let name2 = "Tim McGraw"
 //name2 = "Romeo"
 
 
 
 // Tipos de dados
 
-//var name: String
-//name = "Tim McGraw"
+var age: Int
+age = 25
 
-//var age: Int
-//age = 25
-//
-//var latitude: Double
-//latitude = 36.166667
+var latitude: Double
+latitude = 36.166667
 
 var longitude: Float
 longitude = -86.783333
@@ -52,27 +49,22 @@ c >= 3
 c > 4
 c < 4
 
-var name1 = "Tim McGraw"
-var name2 = "Romeo"
-var both = name1 + " and " + name2
 
-name1 == "Tim McGraw"
-name1 != "Tim McGraw"
+var both = name + " and " + name2
 
-//var stayOutTooLate = true
-//stayOutTooLate
-//!stayOutTooLate
+name == "Tim McGraw"
+name != "Tim McGraw"
+
+var stayOutTooLate = true
+stayOutTooLate
+!stayOutTooLate
 
 
 
 // String Interpolation
 
-var name = "Tim McGraw"
 "Your name is \(name)"
 "Your name is " + name
-
-var age = 25
-var latitude = 36.166667
 
 "Your name is \(name), your age is \(age), and your latitude is \(latitude)"
 
@@ -126,7 +118,6 @@ if person3 == "hater" {
     action = "cruise"
 }
 
-var stayOutTooLate = true
 var nothingInBrain = true
 
 if stayOutTooLate && nothingInBrain {
@@ -137,24 +128,34 @@ if stayOutTooLate && nothingInBrain {
 
 // Loops
 
-//var str = "Fakers gonna"
-//
-//for _ in 1 ... 5 {
-//    str += " fake"
-//}
-//
-//print(str)
-//
-//var people = ["players", "haters", "heart-breakers", "fakers"]
-//var actions = ["play", "hate", "break", "fake"]
-//
-//for i in 0 ... 3 {
-//    print("\(people[i]) gonna \(actions[i])")
-//}
-//
-//for i in 0 ..< people.count {
-//    print("\(people[i]) gonna \(actions[i])")
-//}
+var str = "Fakers gonna"
+
+for _ in 1 ... 5 {
+    str += " fake"
+}
+
+print(str)
+
+var people = ["players", "haters", "heart-breakers", "fakers"]
+var actions = ["play", "hate", "break", "fake"]
+
+for i in 0 ... 3 {
+    print("\(people[i]) gonna \(actions[i])")
+}
+
+for i in 0 ..< people.count {
+    print("\(people[i]) gonna \(actions[i])")
+}
+
+for i in 0 ..< people.count {
+    var str = "\(people[i]) gonna"
+
+    for _ in 1 ... 5 {
+        str += " \(actions[i])"
+    }
+
+    print(str)
+}
 
 
 

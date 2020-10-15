@@ -8,39 +8,67 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var tapCount = 0
-    @State private var name = ""
-    let students = ["Harry", "Hermione", "Ron"]
-    @State private var selectedStudent = "Harry"
+    @State private var checkAmount = ""
+    @State private var numberOfPeople = 2
+    @State private var tipPercentage = 2
+    
+    let tipPercentages = [0, 10, 15, 20, 25]
+    
+    var totalAmount: Double {
+        
+        let tipSelection = Double(tipPercentages[tipPercentage])
+        let orderAmount = Double(checkAmount) ?? 0
+        
+        let tipValue = orderAmount * (tipSelection / 100)
+        let grandTotal = orderAmount + tipValue
+        
+        return grandTotal
+    }
+    
+    var totalPerPerson: Double {
+        let grandTotal = totalAmount
+        let peopleCount = Double(numberOfPeople + 2)
+        let amountPerPerson = grandTotal / peopleCount
+        
+        return amountPerPerson
+    }
     
     var body: some View {
         NavigationView {
             Form {
-                Group {
-                    Text("Hello, world!")
-                    Text("Hello, world!")
-
+                Section(header: Text("Check value")) {
+                    TextField("Amount", text: $checkAmount)
+                        .keyboardType(.decimalPad)
                 }
-                Section {
-                    Text("Hello, world!")
-                    Text("Hello, world!")
-                    Text("Hello, world!")
-                    Text("Hello, world!")
-                    Button("Tap Count \(tapCount)") {
-                        self.tapCount += 1
+                
+                Section(header: Text("How many people?")) {
+                    Picker("Number of people", selection:
+                            $numberOfPeople) {
+                        ForEach(2 ..< 100) {
+                            Text("\($0) people")
+                        }
                     }
+                    .pickerStyle(WheelPickerStyle())
                 }
-                Section {
-                    TextField("Enter your name", text: $name)
-                    Text("Your name is \(name)")
-                }
-                Picker("Select your student", selection: $selectedStudent) {
-                    ForEach(0 ..< students.count) {
-                        Text("Row \(self.students[$0])")
+                
+                Section(header: Text("How much tip do you want to leave?")) {
+                    Picker("Tip percentage", selection: $tipPercentage) {
+                        ForEach(0 ..< tipPercentages.count) {
+                            Text("\(self.tipPercentages[$0])%")
+                        }
                     }
+                    .pickerStyle(SegmentedPickerStyle())
+                }
+                
+                Section(header: Text("Amount per person")) {
+                    Text("$\(totalPerPerson, specifier: "%.2f")")
+                }
+                
+                Section(header: Text("Total Amount")) {
+                    Text("$\(totalAmount, specifier: "%.2f")")
                 }
             }
-            .navigationBarTitle(Text("SwiftUI"), displayMode: .inline)
+            .navigationBarTitle("WeSplit")
         }
     }
 }
@@ -50,3 +78,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+

@@ -12,7 +12,7 @@ struct Title: ViewModifier {
         content
             .foregroundColor(.white)
             .padding()
-            .background(Color.black)
+            .background(Color.blue)
             .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 }
@@ -31,7 +31,7 @@ struct CapsuleButton: View {
         Button(text) {
             self.useRedText.toggle()
         }
-        .foregroundColor(useRedText ? .red : .blue)
+        .foregroundColor(useRedText ? .red : .black)
     }
 }
 

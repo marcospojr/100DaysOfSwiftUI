@@ -8,62 +8,61 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var animationAmount: CGFloat = 1
-    @State private var animationAmountOverlay: CGFloat = 1
-    @State private var animationAmount3D = 0.0
+    let letters = Array("Hello SwiftUI")
+    
+    @State private var enabled = false
+    @State private var enabledHello = false
+    @State private var dragAmount = CGSize.zero
+    @State private var dragAmountHello = CGSize.zero
+    
+    @State private var isShowingRed = false
     
     var body: some View {
-        
-        VStack(alignment: .center, spacing: 50) {
-            Spacer()
-            
-            Stepper("Scale amount", value: $animationAmount.animation(
-                Animation.easeOut(duration: 3).repeatCount(3, autoreverses: true)
-            ), in: 1...10)
-            
-            Spacer()
-                        
-            Button("Tap Me") {
-                self.animationAmount += 0.5
-            }
-            .padding(50)
-            .background(Color.red)
-            .foregroundColor(.white)
-            .clipShape(Circle())
-            .overlay(
-                Circle()
-                    .stroke(Color.red)
-                    .scaleEffect(animationAmountOverlay)
-                    .opacity(Double(2 - animationAmountOverlay))
-                    .animation(
-                        Animation.easeInOut(duration: 1)
-                            .repeatForever(autoreverses: false)
-                    )
-            )
-            .scaleEffect(animationAmount)
-            .animation(.easeInOut)
-            .onAppear {
-                self.animationAmountOverlay = 2
-            }
-            
-            Spacer()
-            
-            Text("3D Rotation")
-                .font(.largeTitle)
-                .fontWeight(.black)
-                        
-            Button("Tap Me 3D") {
-                withAnimation(.interpolatingSpring(stiffness: 5, damping: 1)) {
-                    self.animationAmount3D += 360
+        VStack(spacing: 30) {
+            HStack(spacing: 0) {
+                ForEach(0..<letters.count) { num in
+                    Text(String(self.letters[num]))
+                        .padding(5)
+                        .font(.title)
+                        .background(self.enabledHello ? Color.blue : Color.red)
+                        .offset(self.dragAmountHello)
+                        .animation(Animation.default.delay(Double(num) / 20))
                 }
             }
-            .padding(50)
-            .background(Color.red)
-            .foregroundColor(.white)
-            .clipShape(Circle())
-            .rotation3DEffect(
-                .degrees(animationAmount3D),
-                axis: (x: 0.0, y: 1.0, z: 0.0))
+            .gesture(
+                DragGesture()
+                    .onChanged { self.dragAmountHello = $0.translation }
+                    .onEnded { _ in
+                        self.dragAmountHello = .zero
+                        self.enabledHello.toggle()
+                    }
+            )
+            
+            LinearGradient(gradient: Gradient(colors: [.yellow, .red]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                .frame(width: 300, height: 200)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+                .offset(dragAmount)
+                .gesture(
+                    DragGesture()
+                        .onChanged { self.dragAmount = $0.translation }
+                        .onEnded { _ in
+                            withAnimation(.spring()) {
+                                self.dragAmount = .zero }
+                        }
+                )
+            
+            Button("Tap Me") {
+                withAnimation {
+                    self.isShowingRed.toggle()
+                }
+            }
+            
+            if isShowingRed {
+                Rectangle()
+                    .fill(Color.red)
+                    .frame(width: 200, height: 200)
+                    .transition(.scale)
+            }
         }
     }
 }

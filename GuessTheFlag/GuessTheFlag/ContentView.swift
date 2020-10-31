@@ -27,6 +27,7 @@ struct ContentView: View {
     
     @State private var correctRotation = 0.0
     @State private var opacityAmount = 1.0
+    @State private var buttonSelected = false
     
     var body: some View {
         ZStack {
@@ -59,6 +60,7 @@ struct ContentView: View {
                         Image(self.countries[number])
                             .flagImage()
                     }
+                    .animation(Animation.default.repeatCount(5).speed(3))
                     .opacity(number == correctAnswer ? 1 : opacityAmount )
                     .rotation3DEffect(.degrees(number == correctAnswer ? correctRotation : 0.0),
                         axis: (x: 0.0, y: 1.0, z: 0.0))
@@ -91,6 +93,9 @@ struct ContentView: View {
         } else {
             scoreTitle = "Wrong! That's \(countries[number])'s flag! (-50)"
             score -= 50
+            withAnimation(.easeInOut) {
+                self.buttonSelected = true
+            }
         }
         
         showingScore = true
@@ -102,18 +107,6 @@ struct ContentView: View {
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
     }
-    
-    static func requireUserAtencion(on onView: UIView) {
-        let animation = CABasicAnimation(keyPath: "position")
-        
-        animation.duration = 0.07
-        animation.repeatCount = 4
-        animation.autoreverses = true
-        
-        animation.fromValue = NSValue(cgPoint: CGPoint(x: onView.center.x - 10, y: onView.center.y))
-        animation.toValue = NSValue(cgPoint: CGPoint(x: onView.center.x + 10, y: onView.center.y))
-        
-        onView.layer.add(animation, forKey: "position")    }
 }
 
 struct ContentView_Previews: PreviewProvider {

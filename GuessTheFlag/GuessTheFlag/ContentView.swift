@@ -24,6 +24,10 @@ struct ContentView: View {
     
     @State private var showingScore = false
     @State private var scoreTitle = ""
+    
+    @State private var correctRotation = 0.0
+    @State private var opacityAmount = 1.0
+    
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [.blue, .black]), startPoint: .top, endPoint: .bottom)
@@ -39,6 +43,15 @@ struct ContentView: View {
                         .fontWeight(.black)
                 }
                 
+                Text("Score: \(score)")
+                    .foregroundColor(.white)
+                    .font(.title)
+                    .fontWeight(.bold)
+                
+                Text(scoreTitle)
+                    .foregroundColor(.white)
+                    .fontWeight(.bold)
+                
                 ForEach(0 ..< 3) { number in
                     Button(action:  {
                         self.flagTapped(number)
@@ -46,26 +59,33 @@ struct ContentView: View {
                         Image(self.countries[number])
                             .flagImage()
                     }
+                    .opacity(number == correctAnswer ? 1 : opacityAmount )
+                    .rotation3DEffect(.degrees(number == correctAnswer ? correctRotation : 0.0),
+                        axis: (x: 0.0, y: 1.0, z: 0.0))
                 }
-                Text("Score: \(score)")
-                    .foregroundColor(.white)
-                    .font(.title)
-                    .fontWeight(.bold)
+                
+                Spacer()
+                
+                Button("Continue") {
+                    self.askQuestion()
+                }
                 
                 Spacer()
             }
         }
-        .alert(isPresented: $showingScore) {
-            Alert(title: Text(scoreTitle), message: Text("Your score is \(score)"), dismissButton: .default(Text("Continue")) {
-                    self.askQuestion()
-            })
-        }
     }
     
     func flagTapped (_ number: Int) {
+        
         if number == correctAnswer {
+            opacityAmount = 0.75
             scoreTitle = "Correct (+100)"
             score += 100
+            withAnimation(.interpolatingSpring(stiffness: 20, damping: 5)) {
+                if number == correctAnswer {
+                    self.correctRotation += 360
+                }
+            }
         } else if score == 0{
             scoreTitle = "Wrong! That's \(countries[number])'s flag!"
         } else {
@@ -77,9 +97,23 @@ struct ContentView: View {
     }
     
     func askQuestion() {
+        scoreTitle = ""
+        opacityAmount = 1.0
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
     }
+    
+    static func requireUserAtencion(on onView: UIView) {
+        let animation = CABasicAnimation(keyPath: "position")
+        
+        animation.duration = 0.07
+        animation.repeatCount = 4
+        animation.autoreverses = true
+        
+        animation.fromValue = NSValue(cgPoint: CGPoint(x: onView.center.x - 10, y: onView.center.y))
+        animation.toValue = NSValue(cgPoint: CGPoint(x: onView.center.x + 10, y: onView.center.y))
+        
+        onView.layer.add(animation, forKey: "position")    }
 }
 
 struct ContentView_Previews: PreviewProvider {

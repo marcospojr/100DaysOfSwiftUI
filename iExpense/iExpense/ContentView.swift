@@ -7,65 +7,40 @@
 
 import SwiftUI
 
-struct SecondView: View {
-    @Environment(\.presentationMode) var presentationMode
-    var name: String
-    
-    var body: some View {
-        Button("Dismiss") {
-            self.presentationMode.wrappedValue.dismiss()
-        }
-    }
+struct ExpenseItem: Identifiable {
+    let id = UUID()
+    let name: String
+    let type: String
+    let amount: Int
 }
 
-struct User: Codable {
-    var firstName: String
-    var lastName: String
+class Expenses: ObservableObject {
+    @Published var items = [ExpenseItem]()
 }
 
 struct ContentView: View {
-    @State private var showingSheet = false
-
-    @State private var numbers = [Int]()
-    @State private var currentNumber = 1
-    
-    @State private var tapCount = UserDefaults.standard.integer(forKey: "Tap")
+    @ObservedObject var expenses = Expenses()
     
     var body: some View {
         NavigationView {
-            VStack {
-                List {
-                    ForEach(numbers, id: \.self) {
-                        Text("\($0)")
-                    }
-                    .onDelete(perform: removeRows)
+            List {
+                ForEach(expenses.items) { item in
+                    Text(item.name)
                 }
-
-                VStack(spacing: 30) {
-                    Button("Add Number") {
-                        self.numbers.append(self.currentNumber)
-                        self.currentNumber += 1
-                    }
-
-                    Button("Show sheet") {
-                        self.showingSheet.toggle()
-                    }
-                    .sheet(isPresented: $showingSheet) {
-                        SecondView(name: "@marcospojr")
-                    }
-                    
-                    Button("Tap count: \(tapCount)") {
-                        self.tapCount += 1
-                        UserDefaults.standard.set(self.tapCount, forKey: "Tap")
-                    }
-                }
+                .onDelete(perform: removeItems)
             }
-            .navigationBarItems(leading: EditButton())
+            .navigationBarTitle("iExpense")
+            .navigationBarItems(trailing: Button(action: {
+                let expense = ExpenseItem(name: "Test", type: "Personal", amount: 5)
+                self.expenses.items.append(expense)
+            }) {
+                Image(systemName: "plus")
+            })
         }
     }
     
-    func removeRows(at offsets: IndexSet) {
-        numbers.remove(atOffsets: offsets)
+    func removeItems(at offsets: IndexSet) {
+        expenses.items.remove(atOffsets: offsets)
     }
 }
 

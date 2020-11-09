@@ -9,8 +9,23 @@ import SwiftUI
 
 struct AstronautView: View {
     let astronaut: Astronaut
-    let missions: [Mission] = Bundle.main.decode("missions.json")
-    let astronauts: [Astronaut] = Bundle.main.decode("astronauts.json")
+    let missionsFlew: [Mission]
+    
+    init(astronaut: Astronaut, missions: [Mission]) {
+        self.astronaut = astronaut
+        
+        var matches: [Mission] = []
+        
+        for mission in missions {
+            for crew in mission.crew {
+                if crew.name == astronaut.id {
+                    matches.append(mission)
+                    break
+                }
+            }
+        }
+        self.missionsFlew = matches
+    }
     
     var body: some View {
         GeometryReader { geometry in
@@ -26,23 +41,19 @@ struct AstronautView: View {
                         .layoutPriority(1)
                     
                     Text("Missions that this astronaut flew on:")
-                    
-                    List(missions) { mission in
-                        if mission.crewList.contains(astronaut.id) {
-                            NavigationLink(destination: MissionView(mission: mission, astronauts: self.astronauts)) {
-                                Image(mission.image)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 44, height: 44)
-                                
-                                VStack(alignment: .leading) {
-                                    Text(mission.displayName)
-                                        .font(.headline)
-                                    Text(mission.formattedLaunchDate)
-                                }
+                
+                    if !self.missionsFlew.isEmpty {
+                        Form {
+                            Section(header: Text("Mission Flew")
+                                .foregroundColor(Color.blue)
+                                .font(.system(.body))) {
+                                    List(self.missionsFlew) { mission in
+                                        Text("◉  \(mission.displayName)")
+                                    }
                             }
                         }
                     }
+                    
                 }
             }
         }
@@ -52,8 +63,9 @@ struct AstronautView: View {
 
 struct AstronautView_Previews: PreviewProvider {
     static let astronauts: [Astronaut] = Bundle.main.decode("astrounauts.json")
+    static let missions: [Mission] = Bundle.main.decode("Missions.json")
     
     static var previews: some View {
-        AstronautView(astronaut: astronauts[0])
+        AstronautView(astronaut: astronauts[0], missions: missions)
     }
 }

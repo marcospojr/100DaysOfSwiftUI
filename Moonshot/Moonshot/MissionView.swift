@@ -15,6 +15,7 @@ struct MissionView: View {
     
     let mission: Mission
     let astronauts: [CrewMember]
+    let missions: [Mission]
     
     var body: some View {
         GeometryReader { geometry in
@@ -35,7 +36,7 @@ struct MissionView: View {
                     
                     ForEach(self.astronauts, id: \.role) {
                         crewMember in
-                        NavigationLink(destination: AstronautView(astronaut: crewMember.astronaut)) {
+                        NavigationLink(destination: AstronautView(astronaut: crewMember.astronaut, missions: self.missions)) {
                             HStack {
                                 Image(crewMember.astronaut.id)
                                     .resizable()
@@ -67,21 +68,26 @@ struct MissionView: View {
         .navigationBarTitle(Text(mission.displayName), displayMode: .inline)
     }
     
-    init(mission: Mission, astronauts: [Astronaut]) {
-        self.mission = mission
-
-        var matches = [CrewMember]()
-
-        for member in mission.crew {
-            if let match = astronauts.first(where: { $0.id == member.name }) {
-                matches.append(CrewMember(role: member.role, astronaut: match))
-            } else {
-                fatalError("Missing \(member)")
+    init(missions: [Mission], mission: Mission, astronauts: [Astronaut]) {
+            self.missions = missions
+            self.mission = mission
+            
+            var matches = [CrewMember]()
+            
+            if !astronauts.isEmpty {
+                
+                for memeber in mission.crew {
+                    if let match = astronauts.first(where: {$0.id == memeber.name}) {
+                        matches.append(CrewMember(role: memeber.role, astronaut: match))
+                    } else {
+                        fatalError("Missing Member")
+                    }
+                }
+                
             }
+            
+            self.astronauts = matches
         }
-
-        self.astronauts = matches
-    }
 }
 
 struct MissionView_Previews: PreviewProvider {
@@ -89,6 +95,6 @@ struct MissionView_Previews: PreviewProvider {
     static let astronauts: [Astronaut] = Bundle.main.decode("astronauts.json")
     
     static var previews: some View {
-        MissionView(mission: missions[0], astronauts: astronauts)
+        MissionView(missions: missions, mission: missions[0], astronauts: astronauts)
     }
 }

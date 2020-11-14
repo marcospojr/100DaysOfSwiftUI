@@ -10,3 +10,6 @@ https://www.hackingwithswift.com/100
 - Projeto 1: WeSplit
 - Projeto 2: GuessTheFlag
 - Projeto 3: ViewsAndModifiers
+- Projeto 4: BetterRest
+- Projeto 5: WordScramble
+- Projeto 6: Animation

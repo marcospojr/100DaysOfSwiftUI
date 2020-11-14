@@ -19,4 +19,6 @@ https://www.hackingwithswift.com/100
 
 ## Desafios
 
-- Challenge 1: 
+- Challenge 1: RockPaperScissors
+- Challenge 2: Edutainment
+- Challenge 3: 

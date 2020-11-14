@@ -12,4 +12,11 @@ https://www.hackingwithswift.com/100
 - Projeto 3: ViewsAndModifiers
 - Projeto 4: BetterRest
 - Projeto 5: WordScramble
-- Projeto 6: Animation
+- Projeto 6: Animations
+- Projeto 7: iExpense
+- Projeto 8: Moonshot
+- Projeto 9: Drawing
+
+## Desafios
+
+- Challenge 1: 

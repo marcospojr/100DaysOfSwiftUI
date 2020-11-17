@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Order: ObservableObject {
+class Order: ObservableObject, Codable {
     enum CodingKeys: CodingKey {
         case type, quantity, extraFrosting, addSprinkles, name, streetAddress, city, zip
     }

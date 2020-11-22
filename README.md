@@ -16,6 +16,8 @@ https://www.hackingwithswift.com/100
 - Projeto 7: iExpense
 - Projeto 8: Moonshot
 - Projeto 9: Drawing
+- Projeto 10: HabitTracking
+- Projeto 11: Bookworm
 
 ## Desafios
 

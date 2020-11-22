@@ -14,6 +14,17 @@ struct DetailView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var showingDeleteAlert = false
     
+    var formattedDate: String {
+        if let date = self.book.date {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .long
+            formatter.timeStyle = .medium
+            return formatter.string(from: date)
+        } else {
+            return "N/A"
+        }
+    }
+    
     var body: some View {
         GeometryReader { geometry in
             VStack {
@@ -34,6 +45,8 @@ struct DetailView: View {
                 Text(self.book.author ?? "Unknown author")
                     .font(.title)
                     .foregroundColor(.secondary)
+                
+                Text(formattedDate)
                 
                 Text(self.book.review ?? "No review")
                 .padding()

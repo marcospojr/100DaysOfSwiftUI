@@ -9,50 +9,69 @@ import CoreData
 import SwiftUI
 
 struct ContentView: View {
+    
     @Environment(\.managedObjectContext) var moc
-    @FetchRequest(entity: Country.entity(), sortDescriptors: []) var countries: FetchedResults<Country>
-
+    @State var filterValue = "A"
+    
     var body: some View {
         VStack {
-            List {
-                ForEach(countries, id: \.self) { country in
-                    Section(header: Text(country.wrappedFullName)) {
-                        ForEach(country.candyArray, id: \.self) { candy in
-                            Text(candy.wrappedName)
-                        }
-                    }
+            FilteredList(sort: NSSortDescriptor(keyPath: \Singer.lastName, ascending: true), predicate: .lastName, filter: filterValue)
+                HStack {
+                Button("Add Examples") {
+                    addExamples()
                 }
-            }
-            
-            Button("Add") {
-                let candy1 = Candy(context: self.moc)
-                candy1.name = "Mars"
-                candy1.origin = Country(context: self.moc)
-                candy1.origin?.shortName = "UK"
-                candy1.origin?.fullName = "United Kingdom"
-                
-                let candy2 = Candy(context: self.moc)
-                candy2.name = "KitKat"
-                candy2.origin = Country(context: self.moc)
-                candy2.origin?.shortName = "UK"
-                candy2.origin?.fullName = "United Kingdom"
-                
-                let candy3 = Candy(context: self.moc)
-                candy3.name = "Twix"
-                candy3.origin = Country(context: self.moc)
-                candy3.origin?.shortName = "UK"
-                candy3.origin?.fullName = "United Kingdom"
-                
-                let candy4 = Candy(context: self.moc)
-                candy4.name = "Toblerone"
-                candy4.origin = Country(context: self.moc)
-                candy4.origin?.shortName = "CH"
-                candy4.origin?.fullName = "Switzerland"
-                
-                try? self.moc.save()
+
+                Button("Show A") {
+                    self.filterValue = "A"
+                }
+
+                Button("Show S") {
+                    self.filterValue = "S"
+                }
             }
         }
     }
+    
+    func addExamples() {
+        let taylor = Singer(context: self.moc)
+        taylor.firstName = "Taylor"
+        taylor.lastName = "Swift"
+
+        let ed = Singer(context: self.moc)
+        ed.firstName = "Ed"
+        ed.lastName = "Sheeran"
+
+        let adele = Singer(context: self.moc)
+        adele.firstName = "Adele"
+        adele.lastName = "Adkins"
+        
+        let luan = Singer(context: self.moc)
+        luan.firstName = "Luan"
+        luan.lastName = "Santana"
+        
+        let alejandro = Singer(context: self.moc)
+        alejandro.firstName = "Alejandro"
+        alejandro.lastName = "Sanz"
+        
+        let ivete = Singer(context: self.moc)
+        ivete.firstName = "Ivete"
+        ivete.lastName = "Sangalo"
+        
+        let bryan = Singer(context: self.moc)
+        bryan.firstName = "Bryan"
+        bryan.lastName = "Adams"
+        
+        let xand = Singer(context: self.moc)
+        xand.firstName = "Xand"
+        xand.lastName = "Avião"
+
+        try? self.moc.save()
+    }
+}
+
+enum BeginsWith {
+    case lastName
+    case firstName
 }
 
 struct ContentView_Previews: PreviewProvider {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		474CA6CE2575E22100AD25FD /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474CA6CD2575E22100AD25FD /* ImagePicker.swift */; };
 		47921B7D2572E7B700380348 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47921B7C2572E7B700380348 /* AppDelegate.swift */; };
 		47921B7F2572E7B700380348 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47921B7E2572E7B700380348 /* SceneDelegate.swift */; };
 		47921B812572E7B700380348 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47921B802572E7B700380348 /* ContentView.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		474CA6CD2575E22100AD25FD /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		47921B792572E7B700380348 /* Instafilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instafilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47921B7C2572E7B700380348 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47921B7E2572E7B700380348 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				47921B872572E7B800380348 /* LaunchScreen.storyboard */,
 				47921B8A2572E7B800380348 /* Info.plist */,
 				47921B842572E7B800380348 /* Preview Content */,
+				474CA6CD2575E22100AD25FD /* ImagePicker.swift */,
 			);
 			path = Instafilter;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47921B7D2572E7B700380348 /* AppDelegate.swift in Sources */,
+				474CA6CE2575E22100AD25FD /* ImagePicker.swift in Sources */,
 				47921B7F2572E7B700380348 /* SceneDelegate.swift in Sources */,
 				47921B812572E7B700380348 /* ContentView.swift in Sources */,
 			);

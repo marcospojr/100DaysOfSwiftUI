@@ -15,6 +15,13 @@ struct ContentView: View {
     
     @State private var showingFilterSheet = false
     @State private var showingImagePicker = false
+    
+    @State private var showingAlert = false
+    @State private var alertTitle = ""
+    @State private var alertMessage = ""
+    
+    @State private var changeFilterButton = "Change Filter"
+    
     @State private var inputImage: UIImage?
     @State private var processedImage: UIImage?
     
@@ -30,7 +37,7 @@ struct ContentView: View {
                 self.applyProcessing()
             }
         )
-
+        
         return NavigationView {
             VStack {
                 ZStack {
@@ -58,19 +65,27 @@ struct ContentView: View {
                 .padding(.vertical)
                 
                 HStack {
-                    Button("Change Filter") {
+                    Button(changeFilterButton) {
                         self.showingFilterSheet = true
                     }
                     
                     Spacer()
                     
                     Button("Save") {
-                        guard let processedImage = self.processedImage else { return }
+                        guard let processedImage = self.processedImage else {
+                            alertTitle = "Oops!"
+                            alertMessage = "You have to select an image first!"
+                            self.showingAlert = true
+                            return
+                        }
                         
                         let imageSaver = ImageSaver()
                         
                         imageSaver.sucessHandler = {
                             print("Success!")
+                            alertTitle = "Success!"
+                            alertMessage = "Image saved successfully!"
+                            self.showingAlert = true
                         }
                         
                         imageSaver.errorHandler = {
@@ -78,6 +93,9 @@ struct ContentView: View {
                         }
                         
                         imageSaver.writeToPhotoAlbum(image: processedImage)
+                    }
+                    .alert(isPresented: $showingAlert) {
+                        Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
                     }
                 }
             }
@@ -88,13 +106,34 @@ struct ContentView: View {
             }
             .actionSheet(isPresented: $showingFilterSheet) {
                 ActionSheet(title: Text("Select a filter"), buttons: [
-                    .default(Text("Crystalize")) { self.setFilter(CIFilter.crystallize()) },
-                    .default(Text("Edges")) { self.setFilter(CIFilter.edges()) },
-                    .default(Text("Gaussian Blur")) { self.setFilter(CIFilter.gaussianBlur()) },
-                    .default(Text("Pixellate")) { self.setFilter(CIFilter.pixellate()) },
-                    .default(Text("Sepia Tone")) { self.setFilter(CIFilter.sepiaTone()) },
-                    .default(Text("Unsharp Mask")) { self.setFilter(CIFilter.unsharpMask()) },
-                    .default(Text("Vignette")) { self.setFilter(CIFilter.vignette()) },
+                    .default(Text("Crystalize")) {
+                        self.setFilter(CIFilter.crystallize())
+                        changeFilterButton = "Crystalize"
+                    },
+                    .default(Text("Edges")) {
+                        self.setFilter(CIFilter.edges())
+                        changeFilterButton = "Edges"
+                    },
+                    .default(Text("Gaussian Blur")) {
+                        self.setFilter(CIFilter.gaussianBlur())
+                        changeFilterButton = "Gaussian Blur"
+                    },
+                    .default(Text("Pixellate")) {
+                        self.setFilter(CIFilter.pixellate())
+                        changeFilterButton = "Pixellate"
+                    },
+                    .default(Text("Sepia Tone")) {
+                        self.setFilter(CIFilter.sepiaTone())
+                        changeFilterButton = "Sepia Tone"
+                    },
+                    .default(Text("Unsharp Mask")) {
+                        self.setFilter(CIFilter.unsharpMask())
+                        changeFilterButton = "Unsharp Mask"
+                    },
+                    .default(Text("Vignette")) {
+                        self.setFilter(CIFilter.vignette())
+                        changeFilterButton = "Vignette"
+                    },
                     .cancel()
                 ])
             }
@@ -116,7 +155,7 @@ struct ContentView: View {
         if inputKeys.contains(kCIInputScaleKey) { currentFilter.setValue(filterIntensity * 10, forKey: kCIInputScaleKey)}
         
         guard let outputImage = currentFilter.outputImage else { return }
-
+        
         if let cgimg = context.createCGImage(outputImage, from: outputImage.extent) {
             let uiImage = UIImage(cgImage: cgimg)
             image = Image(uiImage: uiImage)

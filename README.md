@@ -18,6 +18,8 @@ https://www.hackingwithswift.com/100
 - Projeto 9: Drawing
 - Projeto 10: HabitTracking
 - Projeto 11: Bookworm
+- Projeto 12: CoreDataProject
+- Projeto 13: Instafilter
 
 ## Desafios
 

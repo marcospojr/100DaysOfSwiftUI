@@ -13,6 +13,7 @@
 		477E4EC5257AD69C00FE226B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 477E4EC4257AD69C00FE226B /* Assets.xcassets */; };
 		477E4EC8257AD69C00FE226B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 477E4EC7257AD69C00FE226B /* Preview Assets.xcassets */; };
 		477E4ECB257AD69C00FE226B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 477E4EC9257AD69C00FE226B /* LaunchScreen.storyboard */; };
+		47FA97AD257BC93E00A11519 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FA97AC257BC93E00A11519 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		477E4EC7257AD69C00FE226B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		477E4ECA257AD69C00FE226B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		477E4ECC257AD69C00FE226B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47FA97AC257BC93E00A11519 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				477E4EC9257AD69C00FE226B /* LaunchScreen.storyboard */,
 				477E4ECC257AD69C00FE226B /* Info.plist */,
 				477E4EC6257AD69C00FE226B /* Preview Content */,
+				47FA97AC257BC93E00A11519 /* MapView.swift */,
 			);
 			path = BucketList;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				477E4EBF257AD69B00FE226B /* AppDelegate.swift in Sources */,
+				47FA97AD257BC93E00A11519 /* MapView.swift in Sources */,
 				477E4EC1257AD69B00FE226B /* SceneDelegate.swift in Sources */,
 				477E4EC3257AD69B00FE226B /* ContentView.swift in Sources */,
 			);

@@ -16,6 +16,7 @@
 		4783D45A257EAEF70068120C /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4783D459257EAEF70068120C /* Result.swift */; };
 		47C7D413257E848A00446EC4 /* MKPointAnnotation-ObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7D412257E848A00446EC4 /* MKPointAnnotation-ObservableObject.swift */; };
 		47C7D416257E851400446EC4 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7D415257E851400446EC4 /* EditView.swift */; };
+		47E08173257FCD1A006CFD32 /* MKPointAnnotation-Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E08172257FCD1A006CFD32 /* MKPointAnnotation-Codable.swift */; };
 		47FA97AD257BC93E00A11519 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FA97AC257BC93E00A11519 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		4783D459257EAEF70068120C /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		47C7D412257E848A00446EC4 /* MKPointAnnotation-ObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKPointAnnotation-ObservableObject.swift"; sourceTree = "<group>"; };
 		47C7D415257E851400446EC4 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		47E08172257FCD1A006CFD32 /* MKPointAnnotation-Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKPointAnnotation-Codable.swift"; sourceTree = "<group>"; };
 		47FA97AC257BC93E00A11519 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +77,7 @@
 				47FA97AC257BC93E00A11519 /* MapView.swift */,
 				47C7D412257E848A00446EC4 /* MKPointAnnotation-ObservableObject.swift */,
 				47C7D415257E851400446EC4 /* EditView.swift */,
+				47E08172257FCD1A006CFD32 /* MKPointAnnotation-Codable.swift */,
 			);
 			path = BucketList;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 				477E4EC1257AD69B00FE226B /* SceneDelegate.swift in Sources */,
 				4783D45A257EAEF70068120C /* Result.swift in Sources */,
 				47C7D413257E848A00446EC4 /* MKPointAnnotation-ObservableObject.swift in Sources */,
+				47E08173257FCD1A006CFD32 /* MKPointAnnotation-Codable.swift in Sources */,
 				477E4EC3257AD69B00FE226B /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -308,14 +308,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Bookworm/Preview Content\"";
-				DEVELOPMENT_TEAM = C5M3296HDF;
+				DEVELOPMENT_TEAM = R68J5MZ6GA;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Bookworm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.cubhoffman.Bookworm;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marcospojr.Bookworm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -328,14 +328,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Bookworm/Preview Content\"";
-				DEVELOPMENT_TEAM = C5M3296HDF;
+				DEVELOPMENT_TEAM = R68J5MZ6GA;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Bookworm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.cubhoffman.Bookworm;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marcospojr.Bookworm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

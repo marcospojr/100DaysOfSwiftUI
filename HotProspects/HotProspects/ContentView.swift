@@ -5,41 +5,39 @@
 //  Created by Marcos Jr on 15/12/20.
 //
 
+import UserNotifications
 import SwiftUI
 
 struct ContentView: View {
-    @State private var backgroundColor = Color.red
+    var prospects = Prospects()
     
     var body: some View {
-        VStack {
-            Text("Hello, World!")
-                .padding()
-                .background(backgroundColor)
+        TabView {
+            ProspectsView(filter: .none)
+                .tabItem {
+                    Image(systemName: "person.3")
+                    Text("Everyone")
+                }
             
-            Text("Change Color")
-                .padding()
-                .contextMenu {
-                    Button(action: {
-                        self.backgroundColor = .red
-                    }) {
-                        Text("Red")
-                        Image(systemName: "checkmark.circle.fill")
-                            .foregroundColor(.red)
-                    }
-                    
-                    Button(action: {
-                        self.backgroundColor = .green
-                    }) {
-                        Text("Green")
-                    }
-                    
-                    Button(action: {
-                        self.backgroundColor = .blue
-                    }) {
-                        Text("Blue")
-                    }
+            ProspectsView(filter: .contacted)
+                .tabItem {
+                    Image(systemName: "checkmark.circle")
+                    Text("Contacted")
+                }
+            
+            ProspectsView(filter: .uncontacted)
+                .tabItem {
+                    Image(systemName: "questionmark.diamond")
+                    Text("Uncontacted")
+                }
+            
+            MeView()
+                .tabItem {
+                    Image(systemName: "person.crop.square")
+                    Text("Me")
                 }
         }
+        .environmentObject(prospects)
     }
 }
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		478B09C825954ADD008CE86A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478B09C725954ADD008CE86A /* Card.swift */; };
+		478B09CB25954C04008CE86A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478B09CA25954C04008CE86A /* CardView.swift */; };
 		47F4EFCF25924366008FB376 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F4EFCE25924366008FB376 /* AppDelegate.swift */; };
 		47F4EFD125924366008FB376 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F4EFD025924366008FB376 /* SceneDelegate.swift */; };
 		47F4EFD325924366008FB376 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F4EFD225924366008FB376 /* ContentView.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		478B09C725954ADD008CE86A /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		478B09CA25954C04008CE86A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		47F4EFCB25924366008FB376 /* Flashzilla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashzilla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47F4EFCE25924366008FB376 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47F4EFD025924366008FB376 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				47F4EFD925924366008FB376 /* LaunchScreen.storyboard */,
 				47F4EFDC25924366008FB376 /* Info.plist */,
 				47F4EFD625924366008FB376 /* Preview Content */,
+				478B09C725954ADD008CE86A /* Card.swift */,
+				478B09CA25954C04008CE86A /* CardView.swift */,
 			);
 			path = Flashzilla;
 			sourceTree = "<group>";
@@ -148,6 +154,8 @@
 				47F4EFCF25924366008FB376 /* AppDelegate.swift in Sources */,
 				47F4EFD125924366008FB376 /* SceneDelegate.swift in Sources */,
 				47F4EFD325924366008FB376 /* ContentView.swift in Sources */,
+				478B09C825954ADD008CE86A /* Card.swift in Sources */,
+				478B09CB25954C04008CE86A /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

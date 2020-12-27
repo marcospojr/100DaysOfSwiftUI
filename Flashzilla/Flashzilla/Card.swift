@@ -2,7 +2,7 @@
 //  Card.swift
 //  Flashzilla
 //
-//  Created by Marcos Jr on 24/12/20.
+//  Created by Marcos Jr on 26/12/20.
 //
 
 import Foundation

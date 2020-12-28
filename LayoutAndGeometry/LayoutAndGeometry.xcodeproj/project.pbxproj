@@ -7,33 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		47377A4C2598024600B1E68C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47377A4B2598024600B1E68C /* AppDelegate.swift */; };
-		47377A4E2598024600B1E68C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47377A4D2598024600B1E68C /* SceneDelegate.swift */; };
-		47377A502598024600B1E68C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47377A4F2598024600B1E68C /* ContentView.swift */; };
-		47377A522598024700B1E68C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47377A512598024700B1E68C /* Assets.xcassets */; };
-		47377A552598024700B1E68C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47377A542598024700B1E68C /* Preview Assets.xcassets */; };
-		47377A582598024700B1E68C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47377A562598024700B1E68C /* LaunchScreen.storyboard */; };
-		47377A612598026D00B1E68C /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47377A602598026D00B1E68C /* Card.swift */; };
-		47377A642598028400B1E68C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47377A632598028400B1E68C /* CardView.swift */; };
-		47377A6725980CE000B1E68C /* EditCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47377A6625980CE000B1E68C /* EditCards.swift */; };
+		47FB0863259A7C2D0055B5FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FB0862259A7C2D0055B5FB /* AppDelegate.swift */; };
+		47FB0865259A7C2D0055B5FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FB0864259A7C2D0055B5FB /* SceneDelegate.swift */; };
+		47FB0867259A7C2D0055B5FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FB0866259A7C2D0055B5FB /* ContentView.swift */; };
+		47FB0869259A7C2E0055B5FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47FB0868259A7C2E0055B5FB /* Assets.xcassets */; };
+		47FB086C259A7C2E0055B5FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47FB086B259A7C2E0055B5FB /* Preview Assets.xcassets */; };
+		47FB086F259A7C2E0055B5FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47FB086D259A7C2E0055B5FB /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		47377A482598024600B1E68C /* Flashzilla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashzilla.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		47377A4B2598024600B1E68C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		47377A4D2598024600B1E68C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		47377A4F2598024600B1E68C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		47377A512598024700B1E68C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		47377A542598024700B1E68C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		47377A572598024700B1E68C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		47377A592598024700B1E68C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		47377A602598026D00B1E68C /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		47377A632598028400B1E68C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		47377A6625980CE000B1E68C /* EditCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCards.swift; sourceTree = "<group>"; };
+		47FB085F259A7C2D0055B5FB /* LayoutAndGeometry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LayoutAndGeometry.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		47FB0862259A7C2D0055B5FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		47FB0864259A7C2D0055B5FB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		47FB0866259A7C2D0055B5FB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		47FB0868259A7C2E0055B5FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		47FB086B259A7C2E0055B5FB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		47FB086E259A7C2E0055B5FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		47FB0870259A7C2E0055B5FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		47377A452598024600B1E68C /* Frameworks */ = {
+		47FB085C259A7C2D0055B5FB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,43 +37,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		47377A3F2598024600B1E68C = {
+		47FB0856259A7C2D0055B5FB = {
 			isa = PBXGroup;
 			children = (
-				47377A4A2598024600B1E68C /* Flashzilla */,
-				47377A492598024600B1E68C /* Products */,
+				47FB0861259A7C2D0055B5FB /* LayoutAndGeometry */,
+				47FB0860259A7C2D0055B5FB /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		47377A492598024600B1E68C /* Products */ = {
+		47FB0860259A7C2D0055B5FB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				47377A482598024600B1E68C /* Flashzilla.app */,
+				47FB085F259A7C2D0055B5FB /* LayoutAndGeometry.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		47377A4A2598024600B1E68C /* Flashzilla */ = {
+		47FB0861259A7C2D0055B5FB /* LayoutAndGeometry */ = {
 			isa = PBXGroup;
 			children = (
-				47377A4B2598024600B1E68C /* AppDelegate.swift */,
-				47377A4D2598024600B1E68C /* SceneDelegate.swift */,
-				47377A4F2598024600B1E68C /* ContentView.swift */,
-				47377A512598024700B1E68C /* Assets.xcassets */,
-				47377A562598024700B1E68C /* LaunchScreen.storyboard */,
-				47377A592598024700B1E68C /* Info.plist */,
-				47377A532598024700B1E68C /* Preview Content */,
-				47377A602598026D00B1E68C /* Card.swift */,
-				47377A632598028400B1E68C /* CardView.swift */,
-				47377A6625980CE000B1E68C /* EditCards.swift */,
+				47FB0862259A7C2D0055B5FB /* AppDelegate.swift */,
+				47FB0864259A7C2D0055B5FB /* SceneDelegate.swift */,
+				47FB0866259A7C2D0055B5FB /* ContentView.swift */,
+				47FB0868259A7C2E0055B5FB /* Assets.xcassets */,
+				47FB086D259A7C2E0055B5FB /* LaunchScreen.storyboard */,
+				47FB0870259A7C2E0055B5FB /* Info.plist */,
+				47FB086A259A7C2E0055B5FB /* Preview Content */,
 			);
-			path = Flashzilla;
+			path = LayoutAndGeometry;
 			sourceTree = "<group>";
 		};
-		47377A532598024700B1E68C /* Preview Content */ = {
+		47FB086A259A7C2E0055B5FB /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				47377A542598024700B1E68C /* Preview Assets.xcassets */,
+				47FB086B259A7C2E0055B5FB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -87,38 +78,38 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		47377A472598024600B1E68C /* Flashzilla */ = {
+		47FB085E259A7C2D0055B5FB /* LayoutAndGeometry */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 47377A5C2598024700B1E68C /* Build configuration list for PBXNativeTarget "Flashzilla" */;
+			buildConfigurationList = 47FB0873259A7C2E0055B5FB /* Build configuration list for PBXNativeTarget "LayoutAndGeometry" */;
 			buildPhases = (
-				47377A442598024600B1E68C /* Sources */,
-				47377A452598024600B1E68C /* Frameworks */,
-				47377A462598024600B1E68C /* Resources */,
+				47FB085B259A7C2D0055B5FB /* Sources */,
+				47FB085C259A7C2D0055B5FB /* Frameworks */,
+				47FB085D259A7C2D0055B5FB /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Flashzilla;
-			productName = Flashzilla;
-			productReference = 47377A482598024600B1E68C /* Flashzilla.app */;
+			name = LayoutAndGeometry;
+			productName = LayoutAndGeometry;
+			productReference = 47FB085F259A7C2D0055B5FB /* LayoutAndGeometry.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		47377A402598024600B1E68C /* Project object */ = {
+		47FB0857259A7C2D0055B5FB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1230;
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
-					47377A472598024600B1E68C = {
+					47FB085E259A7C2D0055B5FB = {
 						CreatedOnToolsVersion = 12.3;
 					};
 				};
 			};
-			buildConfigurationList = 47377A432598024600B1E68C /* Build configuration list for PBXProject "Flashzilla" */;
+			buildConfigurationList = 47FB085A259A7C2D0055B5FB /* Build configuration list for PBXProject "LayoutAndGeometry" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -126,50 +117,47 @@
 				en,
 				Base,
 			);
-			mainGroup = 47377A3F2598024600B1E68C;
-			productRefGroup = 47377A492598024600B1E68C /* Products */;
+			mainGroup = 47FB0856259A7C2D0055B5FB;
+			productRefGroup = 47FB0860259A7C2D0055B5FB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				47377A472598024600B1E68C /* Flashzilla */,
+				47FB085E259A7C2D0055B5FB /* LayoutAndGeometry */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		47377A462598024600B1E68C /* Resources */ = {
+		47FB085D259A7C2D0055B5FB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47377A582598024700B1E68C /* LaunchScreen.storyboard in Resources */,
-				47377A552598024700B1E68C /* Preview Assets.xcassets in Resources */,
-				47377A522598024700B1E68C /* Assets.xcassets in Resources */,
+				47FB086F259A7C2E0055B5FB /* LaunchScreen.storyboard in Resources */,
+				47FB086C259A7C2E0055B5FB /* Preview Assets.xcassets in Resources */,
+				47FB0869259A7C2E0055B5FB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		47377A442598024600B1E68C /* Sources */ = {
+		47FB085B259A7C2D0055B5FB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47377A4C2598024600B1E68C /* AppDelegate.swift in Sources */,
-				47377A4E2598024600B1E68C /* SceneDelegate.swift in Sources */,
-				47377A502598024600B1E68C /* ContentView.swift in Sources */,
-				47377A6725980CE000B1E68C /* EditCards.swift in Sources */,
-				47377A612598026D00B1E68C /* Card.swift in Sources */,
-				47377A642598028400B1E68C /* CardView.swift in Sources */,
+				47FB0863259A7C2D0055B5FB /* AppDelegate.swift in Sources */,
+				47FB0865259A7C2D0055B5FB /* SceneDelegate.swift in Sources */,
+				47FB0867259A7C2D0055B5FB /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		47377A562598024700B1E68C /* LaunchScreen.storyboard */ = {
+		47FB086D259A7C2E0055B5FB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				47377A572598024700B1E68C /* Base */,
+				47FB086E259A7C2E0055B5FB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -177,7 +165,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		47377A5A2598024700B1E68C /* Debug */ = {
+		47FB0871259A7C2E0055B5FB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -238,7 +226,7 @@
 			};
 			name = Debug;
 		};
-		47377A5B2598024700B1E68C /* Release */ = {
+		47FB0872259A7C2E0055B5FB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -293,42 +281,42 @@
 			};
 			name = Release;
 		};
-		47377A5D2598024700B1E68C /* Debug */ = {
+		47FB0874259A7C2E0055B5FB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Flashzilla/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"LayoutAndGeometry/Preview Content\"";
 				DEVELOPMENT_TEAM = R68J5MZ6GA;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Flashzilla/Info.plist;
+				INFOPLIST_FILE = LayoutAndGeometry/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.marcospojr.Flashzilla;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.marcospojr.LayoutAndGeometry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		47377A5E2598024700B1E68C /* Release */ = {
+		47FB0875259A7C2E0055B5FB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Flashzilla/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"LayoutAndGeometry/Preview Content\"";
 				DEVELOPMENT_TEAM = R68J5MZ6GA;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Flashzilla/Info.plist;
+				INFOPLIST_FILE = LayoutAndGeometry/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.marcospojr.Flashzilla;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.marcospojr.LayoutAndGeometry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -338,25 +326,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		47377A432598024600B1E68C /* Build configuration list for PBXProject "Flashzilla" */ = {
+		47FB085A259A7C2D0055B5FB /* Build configuration list for PBXProject "LayoutAndGeometry" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				47377A5A2598024700B1E68C /* Debug */,
-				47377A5B2598024700B1E68C /* Release */,
+				47FB0871259A7C2E0055B5FB /* Debug */,
+				47FB0872259A7C2E0055B5FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		47377A5C2598024700B1E68C /* Build configuration list for PBXNativeTarget "Flashzilla" */ = {
+		47FB0873259A7C2E0055B5FB /* Build configuration list for PBXNativeTarget "LayoutAndGeometry" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				47377A5D2598024700B1E68C /* Debug */,
-				47377A5E2598024700B1E68C /* Release */,
+				47FB0874259A7C2E0055B5FB /* Debug */,
+				47FB0875259A7C2E0055B5FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 47377A402598024600B1E68C /* Project object */;
+	rootObject = 47FB0857259A7C2D0055B5FB /* Project object */;
 }
